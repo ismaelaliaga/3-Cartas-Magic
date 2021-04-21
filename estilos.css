@@ -1,0 +1,47 @@
+/* *{
+    box-sizing: border-box;
+} */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+body{
+    font-family: 'Muli', sans-serif;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+.contenedorFoto{
+    width: 10vw;
+    height: 300px;
+    border-radius: 2rem;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transition: all 700ms ease-in;
+}
+
+#galeria{
+    display: flex;
+    width: 90vw;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.tituloFoto{
+    text-align: center;
+    font-size: 30px;
+    position: absolute;
+    color: white;
+    bottom: 30px;
+    left: 50px;
+}
+
+@media (max-width: 600px){
+    #galeria{
+        width: 100vw;
+    }
+    .contenedorFoto:nth-of-type(4), .contenedorFoto:nth-of-type(5){
+        display: none;
+    }
+}

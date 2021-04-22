@@ -10,8 +10,8 @@ body{
     height: 100vh;
     margin: 0;
 }
-.contenedorFoto{
-    width: 10vw;
+.thumbnail{
+    width: 100px;
     height: 240px;
     border-radius: 2rem;
     position: relative;

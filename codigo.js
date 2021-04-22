@@ -1,20 +1,17 @@
-const figures=document.querySelectorAll(".contenedorFoto");
-figures.forEach(function(figure){
-    figure.addEventListener('click', function(){
+const thumbnails=document.querySelectorAll(".thumbnail");
+let id;
+thumbnails.forEach(function(thumbnail){
+    thumbnail.addEventListener('click', function(){
         removeActivaClase();
-        figure.classList.add('activa');
+        id = thumbnail.id;
+        window.alert(id);
+        thumbnail.classList.add('activa');
     })
 })
 
-// function removeActivaClase(){
-//     figures.forEach(function(figure){
-//         figure.classList.remove("activa");
-//     })
-// }
-
 //FUNCIONES FLECHA
 function removeActivaClase(){
-    figures.forEach(figure => {
-        figure.classList.remove("activa");
+    thumbnails.forEach(thumbnail => {
+        thumbnail.classList.remove("activa");
     });
 }

@@ -1,0 +1,182 @@
+/* *{
+    box-sizing: border-box;
+} */
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100vw;
+    margin:0;
+}
+.principal{
+    position: relative;
+    width: 100vw;
+    margin: 0;
+}
+
+.thumbnail{
+    width: 100px;
+    height: 240px;
+    position: relative;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size:contain;
+    transition: all 700ms ease-in;
+}
+
+.galeria{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    margin: 20px;
+    
+
+}
+
+/* Modal y Carta*/
+
+.activa{
+    opacity:1;
+}
+
+.modal{
+    position: absolute;
+    width: 350px;
+    margin: auto;
+    z-index: 1;
+    opacity:0;
+
+}
+.activa{
+    opacity:1;
+}
+.seccarta{
+    border: 20px solid black;
+    border-bottom: 40px solid black;
+    border-radius: .4rem;
+    
+}
+article{
+    display: flex;
+    flex-direction: column;
+    border: 15px solid ;
+    border-image: url(https://image.ibb.co/jKByZn/tile_bg_1.jpg) 30 round;
+    background: url(https://image.ibb.co/jKByZn/tile_bg_1.jpg);
+}
+header{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    display: flex;
+    background: cornsilk;
+    align-items: center;
+}
+
+.mana{
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.nombre-carta{
+    flex-grow: 1;
+    padding-left: 10px;
+    font-size: 15px;
+}
+.mana-incoloro{
+    font-size: 13px;
+    border: 2px solid black;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 5px;
+}
+.mana-color{
+    display: flex;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.mana-color-img {
+    height: 20px;
+}
+
+.imagen-carta{
+    height: 30vh;
+    background-repeat: no-repeat;
+    background-position: top;
+    background-size: cover;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+}
+
+.tipo-carta{
+    font-size: 10px;
+    border-radius: .4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(0, 0, 0);
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.tipo-carta > img{
+    height: 15px;
+    padding: 5px;
+}
+
+.contenido-carta{
+    background: #d3ded6;
+    background-image: url(https://image.ibb.co/dFcNx7/tile_bg_2.jpg);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 10px;
+}
+
+footer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    background: #000000;
+    
+}
+
+footer > p {
+    bottom: 0;
+    font-size: 8px;
+    color: #fff;
+    margin:0;
+    margin-left: 10px;
+}
+
+.fuerzas{
+    font-size: 13px;
+    background: #d3ded6;
+    background-image: url(https://image.ibb.co/dFcNx7/tile_bg_2.jpg);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+    padding: 5px;
+    z-index: 0.1;
+    width: 4em;
+    text-align: center;
+    position:relative;
+    left: 5px;
+    bottom: 20px;
+    width: 3em;
+    text-align: center;
+    box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: inset -2px 2px 1px #333, inset 1px -1px 0 #fff;
+    
+    
+}
+
+@media (max-width: 600px){
+    #galeria{
+        width: 100vw;
+    }
+}

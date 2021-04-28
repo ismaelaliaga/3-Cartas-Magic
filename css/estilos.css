@@ -45,19 +45,137 @@ figcaption {
 
 .carta{
     position: absolute;
-    width: 200px;
-    height: 300px;
+    width: 250px;
+    border: 10px solid black;
+    border-radius: .4rem;
     margin-left: auto;
     margin-right: auto;
     top:25%;
     left: 0;
     right: 0;
-    border: 1px solid black;
     display: none;
-    
 }
 
 .activa{
     display: block;
 
+}
+
+/* Estructura Carta*/
+
+section{
+    display: flex;
+    flex-direction: column;
+    border: 10px solid ;
+    border-image: url(https://image.ibb.co/jKByZn/tile_bg_1.jpg) 30 round;
+    background: url(https://image.ibb.co/jKByZn/tile_bg_1.jpg); 
+    
+}
+
+header{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    display: flex;
+    background: cornsilk;
+
+}
+
+.mana{
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.nombre-carta{
+    flex-grow: 1;
+    padding-left: 10px;
+    font-size: 12px;
+}
+.mana-incoloro{
+    border: 2px solid black;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 5px;
+    padding-left: 1px;
+    font-size: 10px;
+}
+.mana-color{
+    display: flex;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.mana-color-img {
+    height: 15px;
+}
+
+.imagen-carta{
+    height: 120px;
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+}
+
+.tipo-carta{
+    font-size: 10px;
+    border-radius: .4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(0, 0, 0);
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.tipo-carta > img{
+    height: 16px;
+    padding: 5px;
+}
+
+.contenido-carta{
+    background: #d3ded6;
+    background-image: url(https://image.ibb.co/dFcNx7/tile_bg_2.jpg);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 10px;
+}
+
+footer{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+}
+
+footer > p {
+    margin-left: 10px;
+    color: white;
+}
+
+.fuerzas{
+    background: #d3ded6;
+    background-image: url(https://image.ibb.co/dFcNx7/tile_bg_2.jpg);
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+    padding: 5px;
+    z-index: 1;
+    width: 4em;
+    text-align: center;
+    position:relative;
+    left: 5px;
+    bottom: 20px;
+    width: 3em;
+    text-align: center;
+    box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: inset -2px 2px 1px #333, inset 1px -1px 0 #fff;
+    
+    
 }

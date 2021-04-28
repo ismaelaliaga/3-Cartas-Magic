@@ -1,0 +1,58 @@
+
+body{
+    width: 100vw;
+	margin:0;
+    display:flex;
+	align-items:center;
+	justify-content:center;
+    
+}
+.galeria{
+    margin-top: 15%;
+    width:90vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    align-items:center;
+}
+
+.magic{
+    margin: 10px;
+}
+
+figure {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    margin: auto;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+figure>img {
+    max-width: 150px;
+    max-height: 100px;
+}
+
+figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+.carta{
+    position: absolute;
+    width: 200px;
+    height: 300px;
+    border: 1px solid black;
+    display: none;
+}
+
+.activa{
+
+    display: block;
+
+}

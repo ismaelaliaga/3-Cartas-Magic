@@ -15,8 +15,8 @@ class Carta {
     private string $simboloexp;
     private string $habilidad;
     private string $descripcion;
-    private int $fuerza;
-    private int $resistencia;
+    private int|string $fuerza;
+    private int|string $resistencia;
     private string $autor;
 
     public function __construct($id_carta, $nombre_carta, $color_elemento, $icono_mana, $fondo_carta, $num_mana_color, $num_mana_incoloro, $imagen_carta, $tipo, $subtipo, $icono_expansion,
@@ -42,54 +42,56 @@ class Carta {
         $this->autor = $autor;
     }
 
-    public function mostrarcarta($carta){
+    public function mostrarcarta(){
 
-        while ($carta->fetch()) {
-            echo "<div class=magic>
-                    <figure class=thumbnail>
-                        <img src="; printf($this->imgcriatura); echo ">
-                        <figcaption>"; printf($this->nombre); echo "</figcaption>
-                    </figure>
-                    <div class=carta style=background-image: url("; printf($this->fondo); echo ");>
-                        <section>
-                            <article>
-                                <header>
-                                    <h2 class=nombre-carta>"; printf($this->nombre); echo "</h2>
-                                    <div class=mana>
-                                        <span class=mana-incoloro>"; printf($this->manaincoloro); echo "</span>
-                                        <div class=mana-color>
-                                        "; for($i=0;$i>$this->nummanacolor;$i++){
-                                            echo "<img class=mana-color-img src="; printf($this->iconomana); echo ">";
-                                        }
-                                        echo "
-                                        </div>
+        echo "<div class=magic>
+                <figure class=thumbnail>
+                    <img src="; printf($this->imgcriatura); echo ">
+                    <figcaption>"; printf($this->nombre); echo "</figcaption>
+                </figure>
+                <div class=carta style=background-image:url(";printf($this->fondo);echo")>
+                    <section>
+                        <article>
+                            <header>
+                                <h2 class=nombre-carta>"; printf($this->nombre); echo "</h2>
+                                <div class=mana>
+                                    "; if($this->manaincoloro!=0){
+                                        echo "<span class=mana-incoloro>"; printf($this->manaincoloro); echo "</span>";
+                                    }
+                                    echo "
+                                    <div class=mana-color>
+                                    "; for($i=0;$i<$this->nummanacolor;$i++){
+                                        echo "<img class=mana-color-img src="; printf($this->iconomana); echo ">";
+                                    }
+                                    echo "
                                     </div>
-                                </header>
-                                <main>
-                                    <div class=imagen-carta style=background-image: url("; printf($this->imgcriatura); echo ");></div>
-                                    <div class=tipo-carta>
-                                        <h3>"; printf($this->tipo);printf("-"); print($this->subtipo); echo "</h3><img src="; printf($this->simboloexp); echo ">
-                                    </div>
-                                    <div class=contenido-carta>
-                                        <p class=efecto-carta>
-                                        "; printf($this->habilidad); echo "
-                                        </p>
-                                        <p class=descripcion-carta>
-                                        "; printf($this->descripcion); echo "
-                                        </p>
-                                    </div>
-                                </main>
-                                <footer>
-                                    <p class=autor-carta>"; printf($this->autor); echo "</p>
-                                    <div class=fuerzas>
-                                        <i>"; printf($this->fuerza); echo " / "; printf($this->resistencia); echo "</i>
-                                    </div>
-                                </footer>
-                            </article>
-                        </section>
-                    </div>
-                </div>";
-        }
+                                </div>
+                            </header>
+                            <main>
+                                <div class=imagen-carta style=background-image:url(";printf($this->imgcriatura);echo");></div>
+                                <div class=tipo-carta>
+                                    <h3>"; printf($this->tipo);printf("-"); print($this->subtipo); echo "</h3><img src="; printf($this->simboloexp); echo ">
+                                </div>
+                                <div class=contenido-carta>
+                                    <p class=efecto-carta>
+                                    "; printf($this->habilidad); echo "
+                                    </p>
+                                    <p class=descripcion-carta>
+                                    "; printf($this->descripcion); echo "
+                                    </p>
+                                </div>
+                            </main>
+                            <footer>
+                                <p class=autor-carta>"; printf($this->autor); echo "</p>
+                                <div class=fuerzas>
+                                    <i>"; printf($this->fuerza); echo " / "; printf($this->resistencia); echo "</i>
+                                </div>
+                            </footer>
+                        </article>
+                    </section>
+                </div>
+            </div>";
+        
     }
 
 }

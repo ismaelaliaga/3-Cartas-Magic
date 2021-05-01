@@ -40,11 +40,11 @@ CREATE TABLE cartas(
 );
 
 insert into elementos (`nombre`,`icono_mana`,`fondo_carta`) values 
-('Azul','./img/elementos/mana/manaazul.png', './img/elementos/fondoazul.png')
-,('Blanco','./img/elementos/mana/manablanco.png', './img/elementos/fondoblanco.png')
-,('Rojo','./img/elementos/mana/manarojo.png', './img/elementos/fondorojo.png')
-,('Negro','./img/elementos/mana/mananegro.png', './img/elementos/fondonegro.png')
-,('Verde','./img/elementos/mana/manaverde.png', './img/elementos/fondoverde.png');
+('Azul','./img/elementos/mana/manaazul.png', './img/elementos/fondos/fondoazul.jpg')
+,('Blanco','./img/elementos/mana/manablanco.png', './img/elementos/fondos/fondoblanco.jpg')
+,('Rojo','./img/elementos/mana/manarojo.png', './img/elementos/fondos/fondorojo.jpg')
+,('Negro','./img/elementos/mana/mananegro.png', './img/elementos/fondos/fondonegro.jpg')
+,('Verde','./img/elementos/mana/manaverde.png', './img/elementos/fondos/fondoverde.jpg');
 
 insert into expansiones (`nombre`,`icono_expansion`) values 
 ('Throne of Eldraine','./img/expansiones/throneofeldraine.png');

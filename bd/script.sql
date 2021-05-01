@@ -73,7 +73,7 @@ que se encuentre entre ellas y ponerla en tu mano,Pon el resto en el fondo de tu
 ,('Paladín del Valle de Arden',2,3,1,'./img/criaturas/07.png','Criatura','Caballero humano',1,'Tesón - Si se usaron al menos tres manás 
 blancos para lanzar este hechizo, la Paladín del Valle de Arden entra al campo de batalla con un contador +1/+1 sobre ella.','"Aun 
 cuando la esperanza no es más que un candil que tilila en la noche,seguiré sirviendo al rey ausente."','2','5','Volkan Baga')
-,('Chuiquitín',1,0,1,'./img/criaturas/08.png','Encantamiento','Aura',1,'Destello. Encantar criatura. La criatura encantada obtiene -2/-0.Mientras su controlador tenga 
+,('Chiquitín',1,0,1,'./img/criaturas/08.png','Encantamiento','Aura',1,'Destello. Encantar criatura. La criatura encantada obtiene -2/-0.Mientras su controlador tenga 
 siete o más cartas en su cementerio,en vez de eso, obtiene -6/-0.','Su espada sonó como un tintineo argénteo contra el 
 cristal del tarro y la duende sonrió encantada.','','','Randy Vargas')
 ,('Syr Elenora,la Perspicaz',1,3,2,'./img/criaturas/09.png','Criatura legendaria','Caballero humano',1,'La fuerza de Syr Elenora,la Perspicaz es igual 

@@ -1,6 +1,6 @@
 <?php
 
-function consultacartas(){
+function consultacartas(&$num_cartas){
 
     require_once ("conexionbd.php");
     require_once ("carta.class.php");
@@ -19,9 +19,15 @@ function consultacartas(){
                                     $habilidad, $descripcion, $fuerza, $resistencia, $autor);
             
         $carta->mostrarcarta($carta);
-
+        $num_cartas++;
     }
+
     $consulta->close();
+    return $num_cartas;
 };
+
+function numtotalcartas($num_cartas) {
+    echo "El número total de cartas es $num_cartas";
+}
 
     

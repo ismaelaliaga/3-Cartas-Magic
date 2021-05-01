@@ -14,13 +14,14 @@
 <body>
     
     <main class="galeria">
-	<?php
+        <?php
+            $num_cartas = 0;
+            consultacartas($num_cartas);
+            numtotalcartas($num_cartas);
 
-		consultacartas();
-
-	?>
+        ?>
     </main>
 
-    <script type="text/javascript" src="./js/modal.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
 </body>
 </html>

@@ -110,8 +110,7 @@ header{
 
 .imagen-carta{
     height: 120px;
-    background-size: cover;
-    background-position: center;
+    background-size:100% 100%;
     border: 2px solid rgb(0, 0, 0);
     border-radius: .4rem;
 }
@@ -125,6 +124,7 @@ header{
     border: 2px solid rgb(0, 0, 0);
     padding-right: 10px;
     padding-left: 10px;
+    background: cornsilk;
 }
 
 .tipo-carta > img{
@@ -133,8 +133,7 @@ header{
 }
 
 .contenido-carta{
-    background: #d3ded6;
-    background-image: url(https://image.ibb.co/dFcNx7/tile_bg_2.jpg);
+    background: cornsilk;
     border: 2px solid rgb(0, 0, 0);
     border-radius: .4rem;
     padding-right: 10px;
@@ -157,8 +156,7 @@ footer > p {
 }
 
 .fuerzas{
-    background: #d3ded6;
-    background-image: url(https://image.ibb.co/dFcNx7/tile_bg_2.jpg);
+    background: cornsilk;
     border: 2px solid rgb(0, 0, 0);
     border-radius: .4rem;
     padding: 5px;

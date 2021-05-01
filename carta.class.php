@@ -43,8 +43,9 @@ class Carta {
     }
 
     public function mostrarcarta(){
-
-        echo "<div class=magic>
+        $nombre = $this->nombre;
+        $nombre = explode(" ", $nombre);
+        echo "<div class=magic data-nombre="; printf($nombre[0]); printf(" "); echo "data-tipo="; printf( $this->tipo); printf(" "); echo "data-default="; printf($this->id_carta); echo ">
                 <figure class=thumbnail>
                     <img src="; printf($this->imgcriatura); echo ">
                     <figcaption>"; printf($this->nombre); echo "</figcaption>
@@ -83,8 +84,13 @@ class Carta {
                             </main>
                             <footer>
                                 <p class=autor-carta>"; printf($this->autor); echo "</p>
-                                <div class=fuerzas>
-                                    <i>"; printf($this->fuerza); echo " / "; printf($this->resistencia); echo "</i>
+                                
+                                "; if($this->fuerza!=null || $this->resistencia !=null){
+                                    echo "<div class=fuerzas>
+                                    <i>";printf($this->fuerza); echo " / "; printf($this->resistencia); echo "</i>";
+                                }
+                                echo "
+                                    
                                 </div>
                             </footer>
                         </article>

@@ -27,11 +27,16 @@ function consultacartas(&$num_cartas){
 };
 
 function numtotalcartas($num_cartas) {
-    echo "El número total de cartas es $num_cartas";
+    echo "<p class=ultimoselementos>El número total de cartas es $num_cartas</p>";
 }
 
 function botonesordenar(){
-    echo "<button name=nombrasc id=nombrasc type=button>Nombre ASC</button>";
+    echo "<button class=ultimoselementos id=nombreasc type=button>Nombre ASC</button>
+    <button class=ultimoselementos id=nombredesc type=button>Nombre DESC</button>
+    <button class=ultimoselementos id=tipoasc type=button>Tipo ASC</button>
+    <button class=ultimoselementos id=tipodesc type=button>Tipo DESC</button>
+    <button class=ultimoselementos id=defaultasc type=button>Por defecto ASC</button>
+    <button class=ultimoselementos id=defaultdesc type=button>Por defecto DESC</button>";
 }
 
     

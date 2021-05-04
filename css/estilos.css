@@ -5,8 +5,14 @@ body{
     display:flex;
 	align-items:center;
 	justify-content:center;
+    flex-flow: column wrap;
+    background-image: url("../img/back.jpg");
+    background-size: cover;
+    background-position: center;
+    
     
 }
+
 .galeria{
     margin-top: 15%;
     width:90vw;
@@ -67,7 +73,7 @@ figcaption {
 
 /* Estructura Carta*/
 
-header{
+.header{
     border: 2px solid rgb(0, 0, 0);
     border-radius: 4px;
     display: flex;
@@ -141,7 +147,7 @@ header{
     font-size: 10px;
 }
 
-footer{
+.footer{
     background-color: black;
     display: flex;
     justify-content: space-between;
@@ -150,7 +156,7 @@ footer{
     border-radius: .4rem;
 }
 
-footer > p {
+.footer > p {
     margin-left: 10px;
     color: white;
 }
@@ -170,6 +176,14 @@ footer > p {
     text-align: center;
     box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.8);
     box-shadow: inset -2px 2px 1px #333, inset 1px -1px 0 #fff;
-    
-    
+}
+
+footer{
+    position:sticky;
+    width: 100%;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.76); 
+    padding-bottom: 20px;
+    bottom: 0%;
+
 }

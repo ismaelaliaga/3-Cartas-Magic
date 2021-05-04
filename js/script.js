@@ -6,9 +6,12 @@ const ordennombreasc = document.getElementById("nombreasc");
 const ordennombredesc = document.getElementById("nombredesc");
 const ordentiposasc = document.getElementById("tipoasc");
 const ordentiposdesc = document.getElementById("tipodesc");
+const ordendefaultasc = document.getElementById("defaultasc");
+const ordendefaultdesc = document.getElementById("defaultdesc");
 let contador = 0;
 let nombres = [];
 let tipos = [];
+let pordefecto = [];
 
 //MOSTRAR LA CARTA QUE PERTENECE AL THUMBNAIL
 
@@ -16,6 +19,7 @@ thumbnails.forEach(function (thumbnail) {
     thumbnail.addEventListener('click', function () {
         removeActivaClase();
         this.parentNode.children[1].classList.add('activa');
+        this.parentNode.children[1].scrollIntoView({block: "end", behavior: "smooth"});
     })
 })
 
@@ -40,8 +44,10 @@ function removeActivaClase() {
 magics.forEach(function (magic) {
     arnombres = document.querySelectorAll(".magic")[contador].dataset.nombre;
     artipos = document.querySelectorAll(".magic")[contador].dataset.tipo;
+    ardefault = document.querySelectorAll(".magic")[contador].dataset.default;
     nombres.push(arnombres);
     tipos.push(artipos);
+    pordefecto.push(ardefault);
     contador++;
 })
 
@@ -106,6 +112,31 @@ ordentiposdesc.addEventListener('click', function () {
 
 //SORT VALOR DEFAULT BD
 
+function añadirstyleorderdefault() {
+
+    pordefecto.forEach(function (elemento, indice, tipos) {
+        contador = 0;
+        magics.forEach(function (magic) {
+            if (elemento == document.querySelectorAll(".magic")[contador].dataset.default) {
+                document.querySelectorAll(".magic")[contador].style.order = indice;
+            }
+            contador++;
+        })
+    })
+    ordenultimoselementos();
+}
+
+ordendefaultasc.addEventListener('click', function () {
+    eliminarorder()
+    pordefecto.sort((a,b)=>a-b);
+    añadirstyleorderdefault();
+})
+
+ordendefaultdesc.addEventListener('click', function () {
+    eliminarorder()
+    pordefecto.sort((a,b)=>b-a);
+    añadirstyleorderdefault();
+})
 
 
 //ELIMINAR SORTS
@@ -120,7 +151,6 @@ function eliminarorder() {
 
 function ordenultimoselementos() {
     totalcartas = document.getElementsByClassName("magic").length;
-    console.log(totalcartas);
     ultimoselementos.forEach(function (elemento) {
         elemento.style.order = totalcartas;
     })

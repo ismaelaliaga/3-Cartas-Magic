@@ -53,7 +53,7 @@ class Carta {
                 <div class=carta style=background-image:url(";printf($this->fondo);echo")>
                     <section>
                         <article>
-                            <header>
+                            <div class=header>
                                 <h2 class=nombre-carta>"; printf($this->nombre); echo "</h2>
                                 <div class=mana>
                                     "; if($this->manaincoloro!=0){
@@ -67,8 +67,8 @@ class Carta {
                                     echo "
                                     </div>
                                 </div>
-                            </header>
-                            <main>
+                            </div>
+                            <div class=main>
                                 <div class=imagen-carta style=background-image:url(";printf($this->imgcriatura);echo");></div>
                                 <div class=tipo-carta>
                                     <h3>"; printf($this->tipo);printf("-"); print($this->subtipo); echo "</h3><img src="; printf($this->simboloexp); echo ">
@@ -81,8 +81,8 @@ class Carta {
                                     "; printf($this->descripcion); echo "
                                     </p>
                                 </div>
-                            </main>
-                            <footer>
+                            </div>
+                            <div class=footer>
                                 <p class=autor-carta>"; printf($this->autor); echo "</p>
                                 
                                 "; if($this->fuerza!=null || $this->resistencia !=null){
@@ -92,7 +92,7 @@ class Carta {
                                 echo "
                                     
                                 </div>
-                            </footer>
+                            </div>
                         </article>
                     </section>
                 </div>

@@ -12,16 +12,21 @@
 	?>
 </head>
 <body>
-    
+    <header>
+        
+    </header>
     <main class="galeria">
         <?php
             $num_cartas = 0;
             consultacartas($num_cartas);
-            numtotalcartas($num_cartas);
-            botonesordenar();
-
         ?>
     </main>
+    <footer>
+        <?php
+            numtotalcartas($num_cartas);
+            botonesordenar();
+        ?>
+    </footer>
 
     <script type="text/javascript" src="./js/script.js"></script>
 </body>

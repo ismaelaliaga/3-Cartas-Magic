@@ -8,6 +8,8 @@ const ordentiposasc = document.getElementById("tipoasc");
 const ordentiposdesc = document.getElementById("tipodesc");
 const ordendefaultasc = document.getElementById("defaultasc");
 const ordendefaultdesc = document.getElementById("defaultdesc");
+const informacionh3 = document.getElementById("informacionh3");
+const informacioncarta = document.querySelectorAll(".informacioncarta");
 let contador = 0;
 let nombres = [];
 let tipos = [];
@@ -156,5 +158,18 @@ function ordenultimoselementos() {
     })
 
 }
+
+//AL HACER CLICK EN LA INFORMACION APARECE
+
+informacionh3.addEventListener('click', function () {
+    if(informacioncarta[0].classList.contains("informacioncarta")){
+        informacioncarta[0].classList.remove('informacioncarta');
+        informacioncarta[0].scrollIntoView({block: "end", behavior: "smooth"});
+    }
+    else{
+        informacioncarta[0].classList.add('informacioncarta');
+        informacionh3.scrollIntoView({block: "end", behavior: "smooth"});
+    }
+})
 
 

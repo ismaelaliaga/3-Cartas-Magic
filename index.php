@@ -18,12 +18,13 @@
     <main class="galeria">
         <?php
             $num_cartas = 0;
-            consultacartas($num_cartas);
+            $unidadescarta = consultacartas($num_cartas);
         ?>
     </main>
     <footer>
         <?php
-            numtotalcartas($num_cartas);
+            
+            informacioncartas($unidadescarta,$num_cartas);
             botonesordenar();
         ?>
     </footer>

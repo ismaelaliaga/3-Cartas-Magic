@@ -19,7 +19,7 @@ class Carta {
     private int|string $resistencia;
     private string $autor;
 
-    public function __construct($id_carta, $nombre_carta, $color_elemento, $icono_mana, $fondo_carta, $num_mana_color, $num_mana_incoloro, $imagen_carta, $tipo, $subtipo, $icono_expansion,
+      
     $habilidad, $descripcion, $fuerza, $resistencia, $autor){
 
 
@@ -101,48 +101,3 @@ class Carta {
     }
 
 }
-
-
-
-
-
-// echo "<div class=modal activa>
-    //         <section class=seccarta>
-    //             <article>
-    //                 <header>
-    //                     <h2 class=nombre-carta>"; printf($this->nombre); echo "</h2>
-    //                     <div class=mana>
-    //                         <span class=mana-incoloro>"; printf($this->manaincoloro); echo "</span>
-    //                         <div class=mana-color>
-    //                             <img class=mana-color-img src="; printf($this->manacolor); echo ">
-    //                             <img class=mana-color-img src="; printf($this->manacolor); echo ">
-    //                             <img class=mana-color-img src="; printf($this->manacolor); echo ">
-    //                         </div>
-                            
-    //                     </div>
-                        
-    //                 </header>
-        
-    //                 <main>
-    //                     <div class=imagen-carta style=background-image:url(";printf($this->fondo);echo")>
-    //                     </div>
-    //                     <div class=tipo-carta>
-    //                         <h3>"; printf($this->tipo);printf($this->subtipo); echo"</h3><img src="; printf($this1->simboloexp); echo">
-                            
-    //                     </div>
-    //                     <div class=contenido-carta>
-    //                         <p class=efecto-carta>"; printf($this->habilidad); echo"</p>
-    //                         <p class=descripcion-carta>"; printf($this->descripcion); echo"</p>
-    //                     </div>
-    //                 </main>
-                    
-                    
-    //             </article>
-    //             <footer>
-    //                 <p class=autor-carta>"; printf($this->autor);echo"</p>
-    //                 <div class=fuerzas>
-    //                     <i>"; printf($this->fuerza."/".$this->resistencia); echo "</i>
-    //                 </div>
-    //             </footer>
-    //         </section>
-    //     </div>";

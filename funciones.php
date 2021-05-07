@@ -4,6 +4,7 @@ function consultacartas(&$num_cartas){
 
     require_once ("conexionbd.php");
     require_once ("carta.class.php");
+    $unidadescarta =[];
 
     $consulta = $bd->prepare("SELECT ca.`id_carta`, ca.`nombre`, el.`nombre`, el.`icono_mana`, el.`fondo_carta`, ca.`num_mana_color`, ca.`mana_incoloro`, ca.`img_criatura`, ca.`tipo`,
     ca.`subtipo`, ex.`icono_expansion`, ca.`habilidad`, ca.`descripcion`, ca.`fuerza`, ca.`resistencia`, ca.`autor`
@@ -14,29 +15,40 @@ function consultacartas(&$num_cartas){
     $consulta->execute();
 
     while ($consulta->fetch()) {
-
         $carta = new Carta($id_carta, $nombre_carta, $color_elemento, $icono_mana, $fondo_carta, $num_mana_color, $num_mana_incoloro, $imagen_carta, $tipo, $subtipo, $icono_expansion,
-                                    $habilidad, $descripcion, $fuerza, $resistencia, $autor);
-            
+                                    $habilidad, $descripcion, $fuerza, $resistencia, $autor);  
         $carta->mostrarcarta($carta);
         $num_cartas++;
+        $unidadescarta[] .= $nombre_carta;
     }
-
     $consulta->close();
-    return $num_cartas;
-};
-
-function numtotalcartas($num_cartas) {
-    echo "<p class=ultimoselementos>El número total de cartas es $num_cartas</p>";
-}
-
-function botonesordenar(){
-    echo "<button class=ultimoselementos id=nombreasc type=button>Nombre ASC</button>
-    <button class=ultimoselementos id=nombredesc type=button>Nombre DESC</button>
-    <button class=ultimoselementos id=tipoasc type=button>Tipo ASC</button>
-    <button class=ultimoselementos id=tipodesc type=button>Tipo DESC</button>
-    <button class=ultimoselementos id=defaultasc type=button>Por defecto ASC</button>
-    <button class=ultimoselementos id=defaultdesc type=button>Por defecto DESC</button>";
-}
+    $unidadescarta = array_count_values($unidadescarta);
+    return $unidadescarta;
 
     
+
+};
+
+function botonesordenar(){
+    echo "<h3>Ordenar cartas</h3>
+    <div class=ultimoselementos id=botones>
+        <button id=nombreasc type=button>Nombre ASC</button>
+        <button id=nombredesc type=button>Nombre DESC</button>
+        <button id=tipoasc type=button>Tipo ASC</button>
+        <button id=tipodesc type=button>Tipo DESC</button>
+        <button id=defaultasc type=button>Por defecto ASC</button>
+        <button id=defaultdesc type=button>Por defecto DESC</button>
+    </div>";
+}
+
+function informacioncartas($unidadescarta,$num_cartas){
+    echo "<h3 id=informacionh3>Información del Mazo</h3>
+    <hr>
+    <div class=informacioncarta>";
+        foreach ($unidadescarta as $clave => $valor) {
+            echo "<p class=ultimoselementos id=unidades>Para la carta $clave existen $valor unidad/es</p>";
+        }
+        echo "<h4>Número total de cartas : $num_cartas</h4>
+        <hr>
+    </div>";
+}

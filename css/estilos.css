@@ -55,6 +55,7 @@ figcaption {
 .carta{
     position: absolute;
     width: 250px;
+    min-height: 320px;
     border: 10px solid black;
     border-radius: .4rem;
     margin-left: auto;
@@ -155,6 +156,7 @@ figcaption {
     align-items: center;
     font-size: 9px;
     border-radius: .4rem;
+    padding-bottom: 10%;
 }
 
 .footer > p {

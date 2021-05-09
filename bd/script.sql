@@ -47,7 +47,10 @@ insert into elementos (`nombre`,`icono_mana`,`fondo_carta`) values
 ,('Verde','./img/elementos/mana/manaverde.png', './img/elementos/fondos/fondoverde.jpg');
 
 insert into expansiones (`nombre`,`icono_expansion`) values 
-('Throne of Eldraine','./img/expansiones/throneofeldraine.png');
+('Throne of Eldraine','./img/expansiones/throneofeldraine.png'),
+('Commander 2019','./img/expansiones/commander.png'),
+('Horizontes de Modern','./img/expansiones/modernhorizons.png'),
+('La Guerra de la Chispa','./img/expansiones/warofspark.png');;
 
 insert into cartas (`nombre`,`id_elemento`,`mana_incoloro`,`num_mana_color`
 ,`img_criatura`,`tipo`,`subtipo`,`id_expansion`,`habilidad`,`descripcion`,`fuerza`,`resistencia`,`autor`) values 

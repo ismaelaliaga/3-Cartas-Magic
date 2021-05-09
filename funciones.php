@@ -55,7 +55,7 @@ function informacioncartas($unidadescarta,$num_cartas){
 
 function añadircarta()
 {
-
+    require_once ("conexionbd.php");
     echo "
         <form action=? method=POST enctype=multipart/form-data>
             <h2>¿Deseas añadir una carta?</h2>
@@ -82,13 +82,16 @@ function añadircarta()
             <label for=expansion>Expansión:</label><br>
             <select name=expansion id=expansion>
                 <option value=1>Throne of Eldraine</option>
+                <option value=2>Commander 2019</option>
+                <option value=3>Horizontes de Modern</option>
+                <option value=4>La Guerra de la Chispa</option>
             </select><br><br>
             <label for=habilidad>Habilidad:</label><br>
             <textarea style=resize:none id=habilidad name=habilidad rows=4 cols=30></textarea><br>
             <label for=descripcion>Descripción:</label><br>
             <textarea style=resize:none id=descripcion name=descripcion rows=4 cols=30></textarea><br>
             <label for=fuerza>Número Fuerza:</label><br>
-            <input name=fuerza id=guerza type=text></input><br>
+            <input name=fuerza id=fuerza type=text></input><br>
             <label for=resistencia>Número Resistencia:</label><br>
             <input name=resistencia id=resistencia type=text></input><br>
             <label for=autor>Autor:</label><br>
@@ -98,6 +101,7 @@ function añadircarta()
     ";
 
     if (isset($_POST['enviar'])) {
+        include("conexionbd.php");
         //Recogemos el archivo enviado por el formulario
         $archivo = $_FILES['archivo']['name'];
         //Si el archivo contiene algo y es diferente de vacio
@@ -124,6 +128,26 @@ function añadircarta()
                 }
             }
         }
-        echo "Selecciona una imagen.";
+
+        $inscarta = $bd->prepare("INSERT INTO `cartas` (`nombre`,`id_elemento`,`mana_incoloro`,`num_mana_color`
+        ,`img_criatura`,`tipo`,`subtipo`,`id_expansion`,`habilidad`,`descripcion`,`fuerza`,`resistencia`,`autor`) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)");
+        $inscarta->bind_param('siiisssisssss', $nombre, $id_elemento, $mana_incoloro, $num_mana_color, $img_criatura, $tipo, $subtipo, $id_expansion, $habilidad, $descripcion, $fuerza, $resistencia ,$autor);
+        $nombre = $_POST["nombre"];
+        $id_elemento = $_POST["color"];
+        $mana_incoloro = $_POST["incoloro"];
+        $num_mana_color = $_POST["manacolor"];
+        $img_criatura = './img/criaturas/'.$archivo;
+        $tipo = $_POST["tipo"];
+        $subtipo = $_POST["subtipo"];
+        $id_expansion = $_POST["expansion"];
+        $habilidad = $_POST["habilidad"];
+        $descripcion = $_POST["descripcion"];
+        $fuerza = $_POST["fuerza"];
+        $resistencia = $_POST["resistencia"];
+        $autor = $_POST["autor"];
+        $inscarta->execute();
+        $inscarta->close();
+        header("location:index.php");
+        echo "LAAAAAAAAAAAAAAAAAAAAAAAS";
     }
 }

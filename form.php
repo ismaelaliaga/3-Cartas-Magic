@@ -9,6 +9,7 @@
 	<?php 
 		require_once ("carta.class.php");
 		require_once ("funciones.php");
+        require_once ("conexionbd.php");
 	?>
 </head>
 <body>

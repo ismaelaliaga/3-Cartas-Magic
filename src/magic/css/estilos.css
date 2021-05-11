@@ -1,0 +1,253 @@
+
+body{
+    width: 100vw;
+	margin:0;
+    display:flex;
+	align-items:center;
+	justify-content:center;
+    flex-flow: column wrap;
+    background-image: url("../img/back.jpg");
+    background-size: cover;
+    background-position: center;
+    
+    
+}
+
+.galeria{
+    margin-top: 15%;
+    width:90vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    align-items:center;
+    padding-bottom: 9%;
+}
+
+.magic{
+    margin: 10px;
+}
+
+figure {
+    border: thin #c0c0c0 solid;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    margin: auto;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+figure>img {
+    width:150px;
+    height:100px;
+    max-width: 150px;
+    max-height: 100px;
+}
+
+figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+.carta{
+    position: fixed;
+    width: 250px;
+    height: 320px;
+    border: 10px solid black;
+    border-radius: .4rem;
+    margin-left: auto;
+    margin-right: auto;
+     
+    padding: 10px;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: none;
+}
+
+.activa{
+    display: block;
+
+}
+
+/* Estructura Carta*/
+
+.header{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    display: flex;
+    background: cornsilk;
+
+}
+
+.mana{
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.nombre-carta{
+    flex-grow: 1;
+    padding-left: 10px;
+    font-size: 12px;
+}
+.mana-incoloro{
+    border: 2px solid black;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 5px;
+    padding-left: 1px;
+    font-size: 10px;
+    background-color: rgba(128, 128, 128, 0.61);
+}
+.mana-color{
+    display: flex;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.mana-color-img {
+    height: 15px;
+}
+
+.imagen-carta{
+    height: 120px;
+    background-size:100% 100%;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+}
+
+.tipo-carta{
+    font-size: 10px;
+    border-radius: .4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(0, 0, 0);
+    padding-right: 10px;
+    padding-left: 10px;
+    background: cornsilk;
+}
+
+.tipo-carta > img{
+    height: 16px;
+    padding: 5px;
+}
+
+.contenido-carta{
+    background: cornsilk;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 10px;
+    height: 80px;
+    padding-bottom: 10px;
+}
+
+.footer{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    border-radius: .4rem;
+}
+
+.footer > p {
+    margin-left: 10px;
+    color: white;
+}
+
+.fuerzas{
+    background: cornsilk;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+    padding: 5px;
+    z-index: 1;
+    width: 4em;
+    text-align: center;
+    position:relative;
+    left: 5px;
+    bottom: 10px;
+    width: 3em;
+    text-align: center;
+    box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: inset -2px 2px 1px #333, inset 1px -1px 0 #fff;
+}
+
+footer{
+    display: flex;
+    align-items:center;
+	justify-content:center;
+    flex-flow: column wrap;
+    width: 100%;
+
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.76);
+
+}
+
+#informacionh3:hover {
+    cursor: pointer;
+}
+    
+
+.informacioncarta{
+    display: none;
+}
+
+form{
+    display: flex;
+    align-items:center;
+	justify-content:center;
+    flex-flow: column wrap;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    background-color: rgba(255, 255, 255, 0.849);
+    width: 40vw;
+    padding-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form h2{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.8);
+    
+}
+
+form input,select,textarea,label,option{
+    margin-top: 10px;
+    width: 90%;
+    
+}
+
+form #enviar{
+    
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 10px;
+    border: 1px solid black;
+    box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, 0.8);
+    
+}

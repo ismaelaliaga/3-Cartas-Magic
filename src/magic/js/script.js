@@ -155,6 +155,7 @@ function ordenultimoselementos() {
     totalcartas = document.getElementsByClassName("magic").length;
     ultimoselementos.forEach(function (elemento) {
         elemento.style.order = totalcartas;
+        ordendefaultdesc.scrollIntoView({block: "end"});
     })
 
 }

@@ -6,80 +6,70 @@ namespace Daw\Tests\Magic;
 
 use Daw\Magic\Carta;
 use PHPUnit\Framework\TestCase;
-use DomainException;
 
 
 class CartaPrueba extends TestCase{
 
-    /**
-    * @covers ::IsDniCorrecto
-    */
-    public function testIsDniCorrectoSiElFormatoNoEsCorrectoDevuelveDomainException(){
-        $this->expectException(DomainException::class);
-        //Given
-        $dni = new Carta("8881988M");
-        //When
-        $resultado = $dni->IsDniCorrecto(); 
-    }
+
 
     /**
-    * @covers ::IsDniCorrecto
+    * @covers ::comprobarnombre()
     */
-    public function testIsDniCorrectoSiElDniIntroducidoTiene9CaracteresDevuelveTrue(){
+    public function testElNombreNoEstaFormadoCorrectamente(){
         //Given
-        $dni = new UtilDni("38881988M");
+        $carta = new Carta(1, "Soy el nombre de la carta y voy a tener una longitud que supera los 27 caracteres", "Blanco", "iconoblanco", "fondocarta", 2, 3, "imagencarta", "tipo", "subtipo", "iconoexp",
+        "habilidad", "descripcion", 2, 2, "Ismael");
         //When
-        $resultado = $dni->IsDniCorrecto();
+        $resultado = $carta->comprobarnombre();
         //Then
-        $this->assertTrue($resultado);  
+        $this->assertNotTrue($resultado);
     }
 
     /**
-    * @covers ::IsDniCorrecto
+    * @covers ::comprobarnombre()
     */
-    public function testIsDniCorrectoSiElDniIntroducidoNoEsCorrectoDevuelveDomainException(){
-        $this->expectException(DomainException::class);
+    public function testElNombreEstaFormadoCorrectamente(){
         //Given
-        $dni = new UtilDni("38881988Q");
+        $carta = new Carta(1, "Jesucristo Superstar", "Blanco", "iconoblanco", "fondocarta", 2, 3, "imagencarta", "tipo", "subtipo", "iconoexp",
+        "habilidad", "descripcion", 2, 2, "Ismael");
         //When
-        $resultado = $dni->IsDniCorrecto();
-    }
-
-    /**
-    * @covers ::IsDniCorrecto
-    */
-    public function testIsDniCorrectoSiElDniIntroducidoEsCorrectoDevuelveTrue(){
-        //Given
-        $dni = new UtilDni("38881988M");
-        //When
-        $resultado = $dni->IsDniCorrecto();
+        $resultado = $carta->comprobarnombre();
         //Then
         $this->assertTrue($resultado);
     }
 
     /**
-    * @covers ::IsDniCorrecto
+    * @covers ::comprobarnombre()
     */
-    public function testIsDniCorrectoSiElDniIntroducidoConLetraEsCorrectoDevuelveTrue(){
+    public function testElElementoNoEstaFormadoCorrectamente(){
         //Given
-        $dni = new UtilDni("X0523821L");
+        $carta = new Carta(1, "Ismael", "Blanco", "iconoblanco", "fondocarta", 2, 3, "imagencarta", "tipo", "subtipo", "iconoexp",
+        "habilidad", "descripcion", 2, 2, "Ismael");
         //When
-        $resultado = $dni->IsDniCorrecto();
+        $resultado = $carta->comprobarelemento();
+        //Then
+        $this->assertNotTrue($resultado);
+    }
+
+    /**
+    * @covers ::comprobarelemento()
+    */
+    public function testElElementoEstaFormadoCorrectamente(){
+        //Given
+        $carta = new Carta(1, "Jesucristo Superstar", "Blanco", "iconoblanco", "fondocarta", 2, 3, "imagencarta", "tipo", "subtipo", "iconoexp",
+        "habilidad", "descripcion", 2, 2, "Ismael");
+        //When
+        $resultado = $carta->comprobarnombre();
         //Then
         $this->assertTrue($resultado);
     }
 
-    /**
-    * @covers ::IsDniCorrecto
-    */
-    public function testIsDniCorrectoSiElDniIntroducidoConLetraEsIncorrectoDevuelveDomainException(){
-        $this->expectException(DomainException::class);
-        //Given
-        $dni = new UtilDni("X0523821J");
-        //When
-        $resultado = $dni->IsDniCorrecto();
 
-    }
+
+
+
+
+    
 
 }
 

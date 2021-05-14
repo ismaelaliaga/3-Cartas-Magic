@@ -1,9 +1,9 @@
 <?php 
-        namespace Daw\Magic;
-		require_once ("carta.class.php");
+    namespace Daw\Magic;
+		require_once ("carta.php");
 		require_once ("funciones.php");
         require_once ("conexionbd.php");
-	?>
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>

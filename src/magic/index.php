@@ -15,18 +15,18 @@
 </head>
 <body>
     <header>
-        
+        <?php
+            nav();
+        ?>
     </header>
     <main class="galeria">
         <?php
-            
             $num_cartas = 0;
             $unidadescarta = consultacartas($num_cartas);
         ?>
     </main>
     <footer>
         <?php
-            
             informacioncartas($unidadescarta,$num_cartas);
             botonesordenar();
         ?>

@@ -63,21 +63,53 @@ class Carta {
     $habilidad, $descripcion, $fuerza, $resistencia, $autor){
 
         $this->id_carta = $id_carta;
-        $this->nombre = $nombre_carta;
-        $this->elemento = $color_elemento;
-        $this->iconomana = $icono_mana;
-        $this->fondo = $fondo_carta;
-        $this->nummanacolor = $num_mana_color;
-        $this->manaincoloro = $num_mana_incoloro;
-        $this->imgcriatura = $imagen_carta;
-        $this->tipo = $tipo;
-        $this->subtipo = $subtipo;
-        $this->simboloexp = $icono_expansion;
-        $this->habilidad = $habilidad;
-        $this->descripcion = $descripcion;
-        $this->fuerza = $fuerza;
-        $this->resistencia = $resistencia;
-        $this->autor = $autor;
+        if($this->comprobarnombre($nombre_carta)== true){
+            $this->nombre = $nombre_carta;
+        }
+        if($this->comprobarelemento($color_elemento)== true){
+            $this->elemento = $color_elemento;
+        }
+        if($this->comprobariconomana($icono_mana)== true){
+            $this->iconomana = $icono_mana;
+        }
+        if($this->comprobarfondo($fondo_carta)== true){
+            $this->fondo = $fondo_carta;
+        }
+        if($this->comprobarnummanacolor($num_mana_color)== true){
+            $this->nummanacolor = $num_mana_color;
+        }
+        if($this->comprobarnummanaincoloro($num_mana_incoloro)== true){
+            $this->manaincoloro = $num_mana_incoloro;
+        }
+        if($this->comprobarimgcriatura($imagen_carta)== true){
+            $this->imgcriatura = $imagen_carta;
+        }
+        if($this->comprobartipo($tipo)== true){
+            $this->tipo = $tipo;
+        }
+        if($this->comprobarsubtipo($subtipo)== true){
+            $this->subtipo = $subtipo;
+        }
+        if($this->comprobariconoexp($icono_expansion)== true){
+            $this->simboloexp = $icono_expansion;
+        }
+        if($this->comprobarhabilidad($habilidad)== true){
+            $this->habilidad = $habilidad;
+        }
+        if($this->comprobardescripcion($descripcion)== true){
+            $this->descripcion = $descripcion;
+        }
+        if($this->comprobarfuerza($fuerza)== true){
+            $this->fuerza = $fuerza;
+        }
+        if($this->comprobarresistencia($resistencia)== true){
+            $this->resistencia = $resistencia;
+        }
+        if($this->comprobarautor($autor)== true){
+            $this->autor = $autor;
+        }
+
+        
     }
 
     
@@ -105,8 +137,21 @@ class Carta {
                                 }
                                 echo "
                                 <div class=mana-color>
-                                "; for($i=0;$i<$this->nummanacolor;$i++){
-                                    echo "<img class=mana-color-img src="; echo $this->iconomana; echo ">";
+                                "; switch($this->nummanacolor){
+                                    case 0:
+                                    break;
+                                    case 1:
+                                        echo "<img class=mana-color-img src="; printf($this->iconomana); echo ">";
+                                    break;
+                                    case 2:
+                                        echo "<img class=mana-color-img src="; printf($this->iconomana); echo ">";
+                                        echo "<img class=mana-color-img src="; printf($this->iconomana); echo ">";
+                                    break;
+                                    case 3:
+                                        echo "<img class=mana-color-img src="; printf($this->iconomana); echo ">";
+                                        echo "<img class=mana-color-img src="; printf($this->iconomana); echo ">";
+                                        echo "<img class=mana-color-img src="; printf($this->iconomana); echo ">";
+                                    break;
                                 }
                                 echo "
                                 </div>
@@ -143,29 +188,201 @@ class Carta {
 
 
     /**
-     * Comprobar con TDD si el nombre es de dato correcto
-     * @return $this->autor Devuelve el dato que contiene el autor
+     * Comprueba si el nombre es válido y se crea correctamente
+     * @return true Devuelve true si el nombre se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
      */
 
-    public function comprobarnombre(){
-        if(preg_match("/^[a-zA-Z0-9\s]{1,27}$/", $this->nombre)){
+    public function comprobarnombre($nombre_carta){
+        if(preg_match("/^[a-zA-Z0-9\s]{1,27}$/", $nombre_carta)){
             return true;
         }
         return false;
     }
 
     /**
-     * Comprobar con TDD si el autor es de dato correcto
-     * @return $this->autor Devuelve el dato que contiene el autor
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
      */
 
-    public function comprobarelemento(){
-        if(preg_match("/^[1-5]{1}$/", $this->elemento)){
+    public function comprobarelemento($color_elemento){
+        if(preg_match("/^[a-zA-Z0-9\s]{1,15}$/", $color_elemento)){
+            $this->elemento = $color_elemento;
             return true;
         }
         return false;
     }
 
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobariconomana($icono_mana){
+        if(preg_match("/(jpe?g|png|gif|bmp)$/", $icono_mana)){
+            $this->iconomana = $icono_mana;
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobarfondo($fondo_carta){
+        if(preg_match("/(jpe?g|png|gif|bmp)$/", $fondo_carta)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobarnummanacolor($num_mana_color){
+        if(preg_match("/^[0-3]{1}$/", $num_mana_color)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobarnummanaincoloro($num_mana_incoloro){
+        if(preg_match("/^[0-9]{1}$/", $num_mana_incoloro)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobarimgcriatura($imagen_carta){
+        if(preg_match("/(jpe?g|png|gif|bmp)$/", $imagen_carta)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobartipo($tipo){
+        if(preg_match("/^[a-zA-Z0-9\s]{1,15}$/", $tipo)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobarsubtipo($subtipo){
+        if(preg_match("/^[a-zA-Z0-9\s]{1,15}$/", $subtipo)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobariconoexp($icono_expansion){
+        if(preg_match("/(jpe?g|png|gif|bmp)$/", $icono_expansion)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobarhabilidad($habilidad){
+        if(preg_match("/^[a-zA-Z0-9\s.+-_\/\"]{1,100}$/", $habilidad)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobardescripcion($descripcion){
+        if(preg_match("/^[a-zA-Z0-9\s.+-_\/\"]{1,100}$/", $descripcion)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobarfuerza($fuerza){
+        if(preg_match("/^[0-9*]{1}$/", $fuerza)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobarresistencia($resistencia){
+        if(preg_match("/^[0-9*]{1}$/", $resistencia)){
+            return true;
+        }
+        return false;
+    }
+
+    /**
+     * Comprueba si el elemento es válido y se crea correctamente
+     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
+     * @return false Devuelve false si el nombre no es válido
+     */
+
+    public function comprobarautor($autor){
+        if(preg_match("/^[a-zA-Z0-9\s]{1,25}$/", $autor)){
+            return true;
+        }
+        return false;
+    }
     
 
 }

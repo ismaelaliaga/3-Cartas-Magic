@@ -15,6 +15,11 @@
 	
 </head>
 <body>
+<header class="headernav">
+        <?php
+            nav();
+        ?>
+    </header>
     <main>
         <?php
             añadircarta();

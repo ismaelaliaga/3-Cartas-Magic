@@ -6,10 +6,7 @@ function consultacartas(&$num_cartas){
     require_once ("carta.php");
     $unidadescarta =[];
 
-    $consulta = $bd->prepare("SELECT ca.`id_carta`, ca.`nombre`, el.`nombre`, el.`icono_mana`, el.`fondo_carta`, ca.`num_mana_color`, ca.`mana_incoloro`, ca.`img_criatura`, ca.`tipo`,
-    ca.`subtipo`, ex .`icono_expansion`, ca.`habilidad`, ca.`descripcion`, ca.`fuerza`, ca.`resistencia`, ca.`autor`
-    FROM `cartas` ca LEFT JOIN `elementos` el ON ca.`id_elemento` = el.`id_elemento`
-    LEFT JOIN `expansiones` ex ON ca.`id_expansion` = ex.`id_expansion`");
+    $consulta = $bd->prepare("SELECT * FROM vista_mostrar_cartas");
     $consulta->bind_result($id_carta, $nombre_carta, $color_elemento, $icono_mana, $fondo_carta, $num_mana_color, $num_mana_incoloro, $imagen_carta, $tipo, $subtipo, $icono_expansion,
                           $habilidad, $descripcion, $fuerza, $resistencia, $autor);
     $consulta->execute();
@@ -51,6 +48,18 @@ function informacioncartas($unidadescarta,$num_cartas){
         echo "<h4>Número total de cartas : $num_cartas</h4>
         <hr>
     </div>";
+}
+
+function nav(){
+    echo "<input type=checkbox id=btn_menu>
+    <label for=btn_menu><img src=img/icono_menu.png width=100% height=100%></label>
+    <nav class=menu>
+        <ul>
+            <a href=./index.php><img src=./img/logo.png height= 90vh></a>
+            <li><a href=./index.php>Galería</a></li>
+            <li><a href=./form.php>Añadir Carta</a></li>
+        </ul>
+    </nav>";
 }
 
 function añadircarta(){
@@ -247,6 +256,5 @@ function añadircarta(){
             $inscarta->close();
             echo "<span class=mensajeform>Se ha añadido correctamente la carta</span>";
         }
-        
     }
 }

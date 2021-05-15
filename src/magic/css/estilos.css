@@ -26,12 +26,13 @@ body{
 }
 
 .galeria{
-    margin-top: 20px;
+    margin-top: 20vh;
     width:90vw;
     display: flex;
     flex-flow: row wrap;
     justify-content:center;
     align-items:center;
+    margin-bottom: 35vh;
 }
 
 .magic{
@@ -203,6 +204,7 @@ footer{
 	justify-content:center;
     flex-flow: column wrap;
     width: 100%;
+
 
     text-align: center;
     background-color: rgba(255, 255, 255, 0.76);

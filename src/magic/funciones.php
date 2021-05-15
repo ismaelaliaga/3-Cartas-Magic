@@ -185,7 +185,7 @@ function añadircarta(){
         $inscarta->bind_param('siiisssisssss', $nombre, $id_elemento, $mana_incoloro, $num_mana_color, $img_criatura, $tipo, $subtipo, $id_expansion, $habilidad, $descripcion, $fuerza, $resistencia ,$autor);
         $nombre = ucfirst($_POST["nombre"]);
         $nombre = trim($nombre);
-        $formato_nombre = preg_match("/^[a-zA-Z0-9\s]{1,27}$/", $nombre);
+        $formato_nombre = preg_match("/^[[:ascii:]áéíóúÁÉÍÓÚñÑ]{1,27}$/", $nombre);
         $id_elemento = $_POST["color"];
         $formato_id_elemento = preg_match("/^[1-5]{1}$/", $id_elemento);
         $mana_incoloro = $_POST["incoloro"];
@@ -195,25 +195,25 @@ function añadircarta(){
         $img_criatura = './img/criaturas/'.$archivo;
         $tipo = ucfirst($_POST["tipo"]);
         $tipo = trim($tipo);
-        $formato_tipo = preg_match("/^[a-zA-Z0-9\s]{1,15}$/", $tipo);
+        $formato_tipo = preg_match("/^[[:ascii:]áéíóúÁÉÍÓÚñÑ]{1,15}$/", $tipo);
         $subtipo = ucfirst($_POST["subtipo"]);
         $subtipo = trim($subtipo);
-        $formato_subtipo = preg_match("/^[a-zA-Z0-9\s]{1,15}$/", $subtipo);
+        $formato_subtipo = preg_match("/^[[:ascii:]áéíóúÁÉÍÓÚñÑ]{1,15}$/", $subtipo);
         $id_expansion = $_POST["expansion"];
         $formato_id_expansion = preg_match("/^[1-4]{1}$/", $id_expansion);
         $habilidad = ucfirst($_POST["habilidad"]);
         $habilidad = trim($habilidad);
-        $formato_habilidad = preg_match("/^[a-zA-Z0-9\s]{1,100}$/", $habilidad);
+        $formato_habilidad = preg_match("/^[[:ascii:]áéíóúÁÉÍÓÚñÑ]{1,100}$/", $habilidad);
         $descripcion = ucfirst($_POST["descripcion"]);
         $descripcion = trim($descripcion);
-        $formato_descripcion = preg_match("/^[a-zA-Z0-9\s]{1,100}$/", $descripcion);
+        $formato_descripcion = preg_match("/^[[:ascii:]áéíóúÁÉÍÓÚñÑ]{1,100}$/", $descripcion);
         $fuerza = $_POST["fuerza"];
         $formato_fuerza = preg_match("/^[0-9*]{1}$/", $fuerza);
         $resistencia = $_POST["resistencia"];
         $formato_resistencia = preg_match("/^[0-9*]{1}$/", $resistencia);
         $autor = ucfirst($_POST["autor"]);
         $autor = trim($autor);
-        $formato_autor = preg_match("/^[a-zA-Z0-9\s]{1,25}$/", $autor);
+        $formato_autor = preg_match("/^[[:ascii:]áéíóúÁÉÍÓÚñÑ]{1,25}$/", $autor);
 
         if(!$formato_nombre){
             echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente el nombre</span>";

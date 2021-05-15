@@ -194,7 +194,7 @@ class Carta {
      */
 
     public function comprobarnombre($nombre_carta){
-        if(preg_match("/^[[:ascii:]áéíóúÁÉÍÓÚ]{1,27}$/", $nombre_carta)){
+        if(preg_match("/^[[:ascii:]áéíóúÁÉÍÓÚñÑ]{1,27}$/", $nombre_carta)){
             return true;
         }
         return false;
@@ -207,7 +207,7 @@ class Carta {
      */
 
     public function comprobarelemento($color_elemento){
-        if(preg_match("/^[[:alpha:]áéíóúÁÉÍÓÚ]{1,15}$/", $color_elemento)){
+        if(preg_match("/^[[:ascii:]áéíóúÁÉÍÓÚñÑ]{1,15}$/", $color_elemento)){
             $this->elemento = $color_elemento;
             return true;
         }

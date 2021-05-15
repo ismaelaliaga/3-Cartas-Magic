@@ -40,7 +40,7 @@ class Carta {
     private string $autor;
 
     /**
-    * Constructor
+    * Construct
     * @param int $id_carta número identificativo de la carta en la bd
     * @param string $nombre nombre de la criatura/artefacto
     * @param string $elemento elemento de la criatura/artefacto
@@ -189,8 +189,8 @@ class Carta {
 
     /**
      * Comprueba si el nombre es válido y se crea correctamente
-     * @return true Devuelve true si el nombre se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobarnombre($nombre_carta){
@@ -202,12 +202,12 @@ class Carta {
 
     /**
      * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobarelemento($color_elemento){
-        if(preg_match("/^[[:ascii:]áéíóúÁÉÍÓÚñÑ]{1,15}$/", $color_elemento)){
+        if(preg_match("/^[[:alpha:]áéíóúÁÉÍÓÚñÑ]{1,15}$/", $color_elemento)){
             $this->elemento = $color_elemento;
             return true;
         }
@@ -215,9 +215,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si el icono de maná es válido y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobariconomana($icono_mana){
@@ -229,9 +229,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si el fondo es válido y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobarfondo($fondo_carta){
@@ -242,9 +242,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si el número de color de maná es válido y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobarnummanacolor($num_mana_color){
@@ -255,9 +255,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si el número de maná incoloro es válido y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobarnummanaincoloro($num_mana_incoloro){
@@ -268,9 +268,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si la imagen de la criatura es válida y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobarimgcriatura($imagen_carta){
@@ -281,9 +281,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si el tipo es válido y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobartipo($tipo){
@@ -294,9 +294,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si el subtipo es válido y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobarsubtipo($subtipo){
@@ -307,9 +307,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si el icono de expansión es válido y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobariconoexp($icono_expansion){
@@ -320,9 +320,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si la habilidad es válida y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobarhabilidad($habilidad){
@@ -333,9 +333,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si la descripción es válida y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobardescripcion($descripcion){
@@ -346,9 +346,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si la fuerza es válida y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobarfuerza($fuerza){
@@ -359,9 +359,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si la resistencia es válida y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobarresistencia($resistencia){
@@ -372,9 +372,9 @@ class Carta {
     }
 
     /**
-     * Comprueba si el elemento es válido y se crea correctamente
-     * @return true Devuelve true si el elemento se ha creado correctamente y era válido
-     * @return false Devuelve false si el nombre no es válido
+     * Comprueba si el autor es válido y se crea correctamente
+     * @return true Devuelve true si se ha creado correctamente y era válido
+     * @return false Devuelve false  es válido
      */
 
     public function comprobarautor($autor){
@@ -382,6 +382,13 @@ class Carta {
             return true;
         }
         return false;
+    }
+
+    /**
+     * Destructor del objeto
+     */
+
+    function __destruct() {
     }
     
 

@@ -1,4 +1,3 @@
-
 :root {
     --color_principal_fondo: rgb(238, 238, 238);
     --color_cabeceras: rgb(40,65,120,1);
@@ -14,6 +13,7 @@ html{
 body{
     width: 100vw;
 	margin:0;
+    margin-left: auto;
     display:flex;
 	align-items:center;
 	justify-content:center;
@@ -26,13 +26,13 @@ body{
 }
 
 .galeria{
-    margin-top: 20vh;
+    margin-top: 50px;
     width:90vw;
     display: flex;
     flex-flow: row wrap;
     justify-content:center;
     align-items:center;
-    margin-bottom: 35vh;
+    margin-bottom: 31vh;
 }
 
 .magic{
@@ -203,13 +203,10 @@ footer{
     align-items:center;
 	justify-content:center;
     flex-flow: column wrap;
-    width: 100%;
-
-
+    width: 100vw;
     text-align: center;
     background-color: rgba(255, 255, 255, 0.76);
-    padding-bottom: 20px;
-
+    padding-bottom: 26px;
 }
 
 #informacionh3:hover {

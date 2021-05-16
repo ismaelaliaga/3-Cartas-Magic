@@ -161,7 +161,7 @@ function añadircarta(){
             //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
             if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
                 echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
-        - Se permiten archivos .gif, .jpg, .png. y de 200 kb como máximo.</b></div>';
+        - Se permiten archivos .gif, .jpg, .png. y de 2 mb como máximo.</b></div>';
             } else {
                 //Si la imagen es correcta en tamaño y tipo
                 //Se intenta subir al servidor

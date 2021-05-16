@@ -24,14 +24,12 @@ body{
 }
 
 .galeria{
-
     width:90vw;
     display: flex;
     flex-flow: row wrap;
     justify-content:center;
     align-items:center;
     flex: 1;
-
 }
 
 .magic{
@@ -40,6 +38,7 @@ body{
 
 figure {
     border: thin #c0c0c0 solid;
+    background-color: #ffffff;
     display: flex;
     flex-flow: column;
     padding: 5px;

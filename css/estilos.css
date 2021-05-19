@@ -1,0 +1,472 @@
+:root {
+    --color_principal_fondo: rgb(238, 238, 238);
+    --color_cabeceras: rgb(40,65,120,1);
+    --color_fondo_tabla: #ffffff;
+    --color_letras_botones_titulos: #fff;
+
+    --color_boton_form: rgb(48, 80, 150);
+}
+html{
+    overflow-x: hidden;
+    height: 100%;
+}
+
+body{
+    width: 100%;
+    height: 100%;
+	margin:0;
+    display:flex;
+	align-items:center;
+    flex-flow: column nowrap;
+    background-image: url("../img/back.jpg");
+    background-size: cover;
+    background-position: center;    
+}
+
+.galeria{
+    width:90vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content:center;
+    align-items:center;
+    flex: 1;
+}
+
+.magic{
+    margin: 10px;
+}
+
+figure {
+    border: thin #c0c0c0 solid;
+    background-color: #ffffff;
+    display: flex;
+    flex-flow: column;
+    padding: 5px;
+    margin: auto;
+    max-width: 150px;
+    max-height: 150px;
+}
+
+figure>img {
+    width:150px;
+    height:100px;
+    max-width: 150px;
+    max-height: 100px;
+}
+
+figcaption {
+    background-color: #222;
+    color: #fff;
+    font: italic smaller sans-serif;
+    padding: 3px;
+    text-align: center;
+}
+
+.carta{
+    position: fixed;
+    width: 250px;
+    height: 320px;
+    border: 10px solid black;
+    border-radius: .4rem;
+    margin-left: auto;
+    margin-right: auto;
+     
+    padding: 10px;
+    top:0;
+    bottom:0;
+    left: 0;
+    right: 0;
+    margin-top: auto;
+    margin-bottom: auto;
+    display: none;
+    z-index: 1;
+}
+
+.activa{
+    display: block;
+}
+
+/* Estructura Carta*/
+
+.header{
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: 4px;
+    display: flex;
+    background: cornsilk;
+    box-shadow: inset -2px 2px 10px #333, inset 1px -1px 0 #fff;
+
+}
+
+.mana{
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 10px;
+}
+
+.nombre-carta{
+    flex-grow: 1;
+    padding-left: 10px;
+    font-size: 12px;
+}
+.mana-incoloro{
+    border: 2px solid black;
+    height: 13px;
+    width: 13px;
+    border-radius: 50%;
+    text-align: center;
+    margin-right: 5px;
+    padding-left: 1px;
+    font-size: 10px;
+    background-color: rgba(128, 128, 128, 0.61);
+}
+.mana-color{
+    display: flex;
+    text-align: center;
+    margin-right: 5px;
+}
+
+.mana-color-img {
+    height: 15px;
+    padding-left: 3px;
+}
+
+.imagen-carta{
+    height: 120px;
+    background-size:100% 100%;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+}
+
+.tipo-carta{
+    font-size: 10px;
+    border-radius: .4rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid rgb(0, 0, 0);
+    padding-right: 10px;
+    padding-left: 10px;
+    background: cornsilk;
+    box-shadow: inset -2px 2px 10px #333, inset 1px -1px 0 #fff;
+}
+
+.tipo-carta > img{
+    height: 16px;
+    padding: 5px;
+}
+
+.contenido-carta{
+    background: cornsilk;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+    padding-right: 10px;
+    padding-left: 10px;
+    font-size: 10px;
+    height: 80px;
+    padding-bottom: 10px;
+    box-shadow: inset -2px 2px 10px #333, inset 1px -1px 0 #fff;
+}
+
+.footer{
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 9px;
+    border-radius: .4rem;
+}
+
+.footer > p {
+    margin-left: 10px;
+    color: white;
+}
+
+.fuerzas{
+    background: cornsilk;
+    border: 2px solid rgb(0, 0, 0);
+    border-radius: .4rem;
+    padding: 5px;
+    z-index: 1;
+    width: 4em;
+    text-align: center;
+    position:relative;
+    left: 5px;
+    bottom: 10px;
+    width: 3em;
+    text-align: center;
+    box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.8);
+    box-shadow: inset -2px 2px 1px #333, inset 1px -1px 0 #fff;
+}
+
+footer{
+    
+    display: flex;
+    align-items:center;
+	justify-content:center;
+    flex-flow: column wrap;
+    width: 100%;
+
+
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.76);
+    padding-bottom: 25px;
+
+}
+
+#informacionh3:hover {
+    cursor: pointer;
+}
+    
+
+.informacioncarta{
+    display: none;
+}
+
+form{
+    display: flex;
+    align-items:center;
+	justify-content:center;
+    flex-flow: column wrap;
+    left: 0;
+    right: 0;
+    margin: auto;
+
+    background-color: rgba(255, 255, 255, 0.849);
+    width: 40vw;
+    padding-bottom: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+form h2{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.8);
+    
+}
+
+form input,select,textarea,label,option{
+    margin-top: 10px;
+    width: 90%;
+    
+}
+
+form #enviar{
+    
+    height: 50px;
+    width: 150px;
+    text-align: center;
+    left: 0;
+    right: 0;
+    margin: auto;
+    margin-top: 10px;
+    border: 1px solid black;
+    box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, 0.8);
+    
+}
+
+.mensajeform{
+    display: inline-block;
+    width: 40vw;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.76);
+    color: black;
+    margin-bottom: 20px;
+}
+
+  
+/* Menú */
+
+#btn_menu {
+    display: none;
+}
+
+header label {
+    display: none;
+    width: 50px;
+    height: 50px;
+    padding: 10px;
+}
+
+header label:hover {
+    cursor:pointer;
+    background: rgba(0,0,0,0.3);
+}
+
+.menu{
+    margin: 0;
+   
+    padding: 0;
+    display: flex;
+    background: var(--color_cabeceras);
+    width: 100vw;
+    align-items: center;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    flex-wrap: nowrap;
+}
+
+.menu ul {
+    width: 100%;
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+    padding-right: 20px;
+}
+
+.menu li a {
+    display: block;
+    padding: 15px 20px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.0em;
+    border-right: 1px solid white;
+}
+
+.menu img{
+    padding-left: 20px;
+}
+
+.menu li:hover {
+    background: rgba(0,0,0,0.3); 
+}
+
+.botonord {
+	box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	background-color:#ededed;
+	border-radius:6px;
+	border:1px solid #dcdcdc;
+	display:inline-block;
+	cursor:pointer;
+	color:#000000;
+	font-family:Arial;
+	font-size:12px;
+	font-weight:bold;
+	padding:6px 24px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #ffffff;
+}
+.botonord:hover {
+	background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	background-color:#dfdfdf;
+}
+.botonord:active {
+	position:relative;
+	top:1px;
+}
+
+@media (max-width:767px) {
+    html{
+        overflow-x: hidden;
+        height: auto;
+    }
+
+    header {
+        background: var(--color_cabeceras);
+        width: 100vw;
+    }
+    header label {
+        display: block;
+    }
+    .menu {
+        display: none;
+    }
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        width: auto;
+    }
+
+    .menu li {
+        border-top: 1px solid #fff;
+        display: none;
+    }
+    .menu ul img{
+        display: none;
+    }
+
+    #btn_menu:checked ~ .menu {
+        display: block;
+        margin: 0;
+        z-index: 1;
+        width: auto;
+    }
+
+    #btn_menu:checked ~ .menu ul{
+        width: auto;
+        padding-left: 0;
+    }
+
+    #btn_menu:checked ~ .menu li{
+        display: block;
+        width: auto;
+        text-align: center;
+        border-right: 0px;
+    }
+
+    #btn_menu:checked ~ .menu li a{
+        border-right: 0px;
+    }
+
+    form{
+        display: flex;
+        align-items:center;
+        justify-content:center;
+        flex-flow: column wrap;
+        left: 0;
+        right: 0;
+        margin: auto;
+    
+        background-color: rgba(255, 255, 255, 0.849);
+        width: 80vw;
+        padding-bottom: 15px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    form h2{
+        text-align: center;
+        border: 1px solid black;
+        border-radius: 10px;
+        padding: 5px;
+        box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.8);
+    }
+    
+    form input,select,textarea,label,option{
+        margin-top: 10px;
+        width: 90%;
+        
+    }
+    
+    form #enviar{
+        
+        height: 50px;
+        width: 150px;
+        text-align: center;
+        left: 0;
+        right: 0;
+        margin: auto;
+        margin-top: 10px;
+        border: 1px solid black;
+        box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, 0.8);
+        
+    }
+    
+    .mensajeform{
+        display: inline-block;
+        width: 8  0vw;
+        padding: 10px;
+        text-align: center;
+        background-color: rgba(255, 255, 255, 0.76);
+        color: black;
+        margin-bottom: 20px;
+    }
+}

@@ -29,12 +29,12 @@ function consultacartas(&$num_cartas){
 function botonesordenar(){
     echo "<h3>Ordenar cartas</h3>
     <div class=ultimoselementos id=botones>
-        <button id=nombreasc type=button>Nombre ASC</button>
-        <button id=nombredesc type=button>Nombre DESC</button>
-        <button id=tipoasc type=button>Tipo ASC</button>
-        <button id=tipodesc type=button>Tipo DESC</button>
-        <button id=defaultasc type=button>Por defecto ASC</button>
-        <button id=defaultdesc type=button>Por defecto DESC</button>
+        <button id=nombreasc class=botonord type=button>Nombre ASC</button>
+        <button id=nombredesc class=botonord type=button>Nombre DESC</button>
+        <button id=tipoasc class=botonord type=button>Tipo ASC</button>
+        <button id=tipodesc class=botonord type=button>Tipo DESC</button>
+        <button id=defaultasc class=botonord type=button>Por defecto ASC</button>
+        <button id=defaultdesc class=botonord type=button>Por defecto DESC</button>
     </div>";
 }
 
@@ -43,7 +43,7 @@ function informacioncartas($unidadescarta,$num_cartas){
     <hr>
     <div class=informacioncarta>";
         foreach ($unidadescarta as $clave => $valor) {
-            echo "<p class=ultimoselementos id=unidades>Para la carta $clave existen $valor unidad/es</p>";
+            echo "<p class=ultimoselementos id=unidades>$clave: <b>$valor</b> unidad/es</p>";
         }
         echo "<h4>Número total de cartas : $num_cartas</h4>
         <hr>
@@ -54,8 +54,8 @@ function nav(){
     echo "<input type=checkbox id=btn_menu>
     <label for=btn_menu><img src=img/icono_menu.png width=100% height=100%></label>
     <nav class=menu>
+    <a href=./index.php><img src=./img/logo.png height= 90vh></a>
         <ul>
-            <a href=./index.php><img src=./img/logo.png height= 90vh></a>
             <li><a href=./index.php>Galería</a></li>
             <li><a href=./form.php>Añadir Carta</a></li>
         </ul>
@@ -161,7 +161,7 @@ function añadircarta(){
             //Se comprueba si el archivo a cargar es correcto observando su extensión y tamaño
             if (!((strpos($tipo, "gif") || strpos($tipo, "jpeg") || strpos($tipo, "jpg") || strpos($tipo, "png")) && ($tamano < 2000000))) {
                 echo '<div><b>Error. La extensión o el tamaño de los archivos no es correcta.<br/>
-        - Se permiten archivos .gif, .jpg, .png. y de 200 kb como máximo.</b></div>';
+        - Se permiten archivos .gif, .jpg, .png. y de 2 mb como máximo.</b></div>';
             } else {
                 //Si la imagen es correcta en tamaño y tipo
                 //Se intenta subir al servidor

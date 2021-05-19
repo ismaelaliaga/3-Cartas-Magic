@@ -172,5 +172,3 @@ informacionh3.addEventListener('click', function () {
         informacionh3.scrollIntoView({block: "end", behavior: "smooth"});
     }
 })
-
-

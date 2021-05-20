@@ -1,10 +1,5 @@
 :root {
-    --color_principal_fondo: rgb(238, 238, 238);
     --color_cabeceras: rgb(40,65,120,1);
-    --color_fondo_tabla: #ffffff;
-    --color_letras_botones_titulos: #fff;
-
-    --color_boton_form: rgb(48, 80, 150);
 }
 html{
     overflow-x: hidden;
@@ -238,11 +233,9 @@ header label:hover {
     form input,select,textarea,label,option{
         margin-top: 10px;
         width: 90%;
-        
     }
     
     form #enviar{
-        
         height: 50px;
         width: 150px;
         text-align: center;

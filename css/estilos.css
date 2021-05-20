@@ -113,9 +113,8 @@ figcaption {
     border: 2px solid rgb(0, 0, 0);
     border-radius: 4px;
     display: flex;
-    background: cornsilk;
+    background: var(--color_back_cartas_textos);
     box-shadow: inset -2px 2px 10px #333, inset 1px -1px 0 #fff;
-
 }
 
 .mana{
@@ -169,7 +168,7 @@ figcaption {
     border: 2px solid rgb(0, 0, 0);
     padding-right: 10px;
     padding-left: 10px;
-    background: cornsilk;
+    background: var(--color_back_cartas_textos);
     box-shadow: inset -2px 2px 10px #333, inset 1px -1px 0 #fff;
 }
 
@@ -179,7 +178,7 @@ figcaption {
 }
 
 .contenido-carta{
-    background: cornsilk;
+    background: var(--color_back_cartas_textos);
     border: 2px solid rgb(0, 0, 0);
     border-radius: .4rem;
     padding-right: 10px;
@@ -205,7 +204,7 @@ figcaption {
 }
 
 .fuerzas{
-    background: cornsilk;
+    background: var(--color_back_cartas_textos);
     border: 2px solid rgb(0, 0, 0);
     border-radius: .4rem;
     padding: 5px;
@@ -222,18 +221,14 @@ figcaption {
 }
 
 footer{
-    
     display: flex;
     align-items:center;
 	justify-content:center;
     flex-flow: column wrap;
     width: 100%;
-
-
     text-align: center;
     background-color: rgba(255, 255, 255, 0.76);
     padding-bottom: 25px;
-
 }
 
 #informacionh3:hover {
@@ -253,7 +248,6 @@ form{
     left: 0;
     right: 0;
     margin: auto;
-
     background-color: rgba(255, 255, 255, 0.849);
     width: 40vw;
     padding-bottom: 15px;
@@ -267,17 +261,14 @@ form h2{
     border-radius: 10px;
     padding: 5px;
     box-shadow: -2px 1px 2px 0 rgba(0, 0, 0, 0.8);
-    
 }
 
 form input,select,textarea,label,option{
     margin-top: 10px;
     width: 90%;
-    
 }
 
 form #enviar{
-    
     height: 50px;
     width: 150px;
     text-align: center;
@@ -287,7 +278,6 @@ form #enviar{
     margin-top: 10px;
     border: 1px solid black;
     box-shadow: 2px 1px 2px 0 rgba(0, 0, 0, 0.8);
-    
 }
 
 .mensajeform{
@@ -391,7 +381,7 @@ header label:hover {
     }
 
     header {
-        background: var(--color_cabeceras);
+        background: var(--color_cabecera_nav);
         width: 100vw;
     }
     header label {

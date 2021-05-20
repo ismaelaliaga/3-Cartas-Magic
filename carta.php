@@ -2,6 +2,8 @@
 namespace Daw\Magic;
 
     /**
+    * @author Ismael Aliaga Molina <ismaelaliagamolina@gmail.com>
+    * @version 1.0.0
     * @param int $id_carta
     * @param string $nombre
     * @param string $elemento
@@ -129,6 +131,7 @@ class Carta {
                     <figcaption>"; echo $this->nombre; echo "</figcaption>
                 </figure>
                 <section class=carta style=background-image:url("; echo $this->fondo;echo")>
+                        <img class=btncerrar src=./img/cerrar.png>
                         <article class=header>
                             <h2 class=nombre-carta>"; echo $this->nombre ; echo "</h2>
                             <div class=mana>

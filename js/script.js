@@ -11,12 +11,13 @@ const ordendefaultdesc = document.getElementById("defaultdesc");
 const informacionh3 = document.getElementById("informacionh3");
 const informacioncarta = document.querySelectorAll(".informacioncarta");
 const fondomodal = document.getElementById("fondomodal");
+const btncerrar = document.querySelectorAll(".btncerrar");
 let contador = 0;
 let nombres = [];
 let tipos = [];
 let pordefecto = [];
 
-//MOSTRAR LA CARTA QUE PERTENECE AL THUMBNAIL
+//MOSTRAR LA CARTA QUE PERTENECE AL THUMBNAIL CON SU FONDO MODAL
 
 thumbnails.forEach(function (thumbnail) {
     thumbnail.addEventListener('click', function () {
@@ -28,15 +29,16 @@ thumbnails.forEach(function (thumbnail) {
     })
 })
 
-//DEJAR DE MOSTRAR LA CARTA EN LA PANTALLA AL HACER CLICK EN ELLA
+//Al DARLE AL BOTÓN DE CERRAR SE CIERRA LA VENTANA MODAL SON SU FONDO Y LA CARTA
 
-cartas.forEach(function (carta) {
-    carta.addEventListener('click', function () {
-        removeActivaClase();
-        fondomodal.style.opacity = 0;
-        fondomodal.style.zIndex = -2;
-    })
-})
+   btncerrar.forEach(function (elemento) {
+       elemento.addEventListener('click', function () {
+            removeActivaClase();
+            fondomodal.style.opacity = 0;
+            fondomodal.style.zIndex = -2;
+        
+       })
+   })
 
 //DEJAR DE MOSTRAR TODAS LAS CARTAS
 

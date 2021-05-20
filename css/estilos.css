@@ -1,10 +1,12 @@
 :root {
-    --color_principal_fondo: rgb(238, 238, 238);
-    --color_cabeceras: rgb(40,65,120,1);
-    --color_fondo_tabla: #ffffff;
-    --color_letras_botones_titulos: #fff;
+    --color_cabecera_nav: rgb(40,65,120,1);
+    --color_back_cartas_textos: cornsilk;
+    --borde_thumbnails:#c0c0c0 solid;
+    --background_thumbails:white;
+    --background_figcaption:#222;
+    --color_texto_figcaption: white;
+    --background_mana_incoloro:rgba(128, 128, 128, 0.61);
 
-    --color_boton_form: rgb(48, 80, 150);
 }
 html{
     overflow-x: hidden;
@@ -37,8 +39,8 @@ body{
 }
 
 figure {
-    border: thin #c0c0c0 solid;
-    background-color: #ffffff;
+    border: var(--borde_thumbnails);
+    background-color: var(--background_thumbails);
     display: flex;
     flex-flow: column;
     padding: 5px;
@@ -55,8 +57,8 @@ figure>img {
 }
 
 figcaption {
-    background-color: #222;
-    color: #fff;
+    background-color: var(--background_figcaption);
+    color: var(--color_texto_figcaption);
     font: italic smaller sans-serif;
     padding: 3px;
     text-align: center;
@@ -70,7 +72,6 @@ figcaption {
     border-radius: .4rem;
     margin-left: auto;
     margin-right: auto;
-     
     padding: 10px;
     top:0;
     bottom:0;
@@ -90,11 +91,20 @@ figcaption {
     position: fixed;
     top: 0;
     left: 0;
-    background-color: #333;
+    background-color: rgba(78, 78, 78, 0.767);
     width: 100vw;
     height: 100vh;
     z-index: -2;
     opacity: 0;
+}
+
+.btncerrar{
+    position: absolute;
+    top: -9px;
+    right: -8px;
+    width:22px;
+    height:auto;
+
 }
 
 /* Estructura Carta*/
@@ -314,7 +324,7 @@ header label:hover {
    
     padding: 0;
     display: flex;
-    background: var(--color_cabeceras);
+    background: var(--color_cabecera_nav);
     width: 100vw;
     align-items: center;
     padding-left: 10px;

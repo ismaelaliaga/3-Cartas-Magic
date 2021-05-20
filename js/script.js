@@ -10,6 +10,7 @@ const ordendefaultasc = document.getElementById("defaultasc");
 const ordendefaultdesc = document.getElementById("defaultdesc");
 const informacionh3 = document.getElementById("informacionh3");
 const informacioncarta = document.querySelectorAll(".informacioncarta");
+const fondomodal = document.getElementById("fondomodal");
 let contador = 0;
 let nombres = [];
 let tipos = [];
@@ -22,6 +23,8 @@ thumbnails.forEach(function (thumbnail) {
         removeActivaClase();
         this.parentNode.children[1].classList.add('activa');
         this.parentNode.children[1].scrollIntoView({block: "end", behavior: "smooth"});
+        fondomodal.style.opacity = 100;
+        fondomodal.style.zIndex = 0;
     })
 })
 
@@ -30,6 +33,8 @@ thumbnails.forEach(function (thumbnail) {
 cartas.forEach(function (carta) {
     carta.addEventListener('click', function () {
         removeActivaClase();
+        fondomodal.style.opacity = 0;
+        fondomodal.style.zIndex = -2;
     })
 })
 

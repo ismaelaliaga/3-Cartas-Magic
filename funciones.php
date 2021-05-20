@@ -1,5 +1,8 @@
 <?php
 namespace Daw\Magic;
+
+// Crea carta y thumbnails y lleva la cuenta de cuantas cartas se ha creado
+
 function consultacartas(&$num_cartas){
 
     require_once ("conexionbd.php");
@@ -26,6 +29,8 @@ function consultacartas(&$num_cartas){
 
 };
 
+// Muestra los botones de ordenar
+
 function botonesordenar(){
     echo "<h3>Ordenar cartas</h3>
     <div class=ultimoselementos id=botones>
@@ -37,6 +42,8 @@ function botonesordenar(){
         <button id=defaultdesc class=botonord type=button>Por defecto DESC</button>
     </div>";
 }
+
+// Muestra el la información del mazo
 
 function informacioncartas($unidadescarta,$num_cartas){
     echo "<h3 id=informacionh3>↓ Información del Mazo ↓</h3>
@@ -50,6 +57,8 @@ function informacioncartas($unidadescarta,$num_cartas){
     </div>";
 }
 
+// Muestra el menú principal de navegación
+
 function nav(){
     echo "<input type=checkbox id=btn_menu>
     <label for=btn_menu><img src=img/icono_menu.png width=100% height=100%></label>
@@ -61,6 +70,8 @@ function nav(){
         </ul>
     </nav>";
 }
+
+//Muestra el formulario para añadir carta
 
 function añadircarta(){
     require_once ("conexionbd.php");
@@ -216,40 +227,40 @@ function añadircarta(){
         $formato_autor = preg_match("/^[[:ascii:]áéíóúÁÉÍÓÚñÑ]{1,25}$/", $autor);
 
         if(!$formato_nombre){
-            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente el nombre</span>";
+            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, por favor introduce correctamente el nombre</span>";
             return false;
         }elseif(!$formato_id_elemento){
-            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente el elemento</span>";
+            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, por favor introduce correctamente el elemento</span>";
             return false;
         }elseif(!$formato_mana_incoloro){
-            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente el número correcto de mana incoloro</span>";
+            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, por favor introduce correctamente el número correcto de mana incoloro</span>";
             return false;
         }elseif(!$formato_num_mana_color){
-            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente el número de color de manas</span>";
+            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, por favor introduce correctamente el número de color de manas</span>";
             return false;
         }elseif(!$formato_tipo){
-            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente el tipo</span>";
+            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, por favor introduce correctamente el tipo</span>";
             return false;
         }elseif(!$formato_subtipo){
-            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente el subtipo</span>";
+            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, por favor introduce correctamente el subtipo</span>";
             return false;
         }elseif(!$formato_id_expansion){
-            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente la expansión</span>";
+            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, por favor introduce correctamente la expansión</span>";
             return false;
         }elseif(!$formato_habilidad){
-            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente la habilidad</span>";
+            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, por favor introduce correctamente la habilidad</span>";
             return false;
         }elseif(!$formato_descripcion){
-            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente la descripción</span>";
+            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, por favor introduce correctamente la descripción</span>";
             return false;
         }elseif(!$formato_fuerza){
-            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente la fuerza</span>";
+            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, por favor introduce correctamente la fuerza</span>";
             return false;
         }elseif(!$formato_resistencia){
-            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente la resistencia</span>";
+            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, por favor introduce correctamente la resistencia</span>";
             return false;
         }elseif(!$formato_autor){
-            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, porfavor introduce correctamente el autor</span>";
+            echo "<span class=mensajeform>La carta no se ha podido añadir correctamente, por favor introduce correctamente el autor</span>";
             return false;
         }else{
             $inscarta->execute();

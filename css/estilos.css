@@ -86,6 +86,17 @@ figcaption {
     display: block;
 }
 
+#fondomodal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #333;
+    width: 100vw;
+    height: 100vh;
+    z-index: -2;
+    opacity: 0;
+}
+
 /* Estructura Carta*/
 
 .header{

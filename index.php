@@ -24,6 +24,7 @@
             $num_cartas = 0;
             $unidadescarta = consultacartas($num_cartas);
         ?>
+        <div id="fondomodal">a</div>
     </main>
     <footer>
         <?php

@@ -1,6 +1,6 @@
 <?php 
         namespace Daw\Magic;
-		require_once ("carta.php");
+		require_once ("Carta.php");
 		require_once ("funciones.php");
 	?>
 <!DOCTYPE html>

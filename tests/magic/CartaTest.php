@@ -2,6 +2,7 @@
 
 declare(strict_types=1);
 
+
 namespace Daw\Tests\Magic;
 
 use Daw\Magic\Carta;

@@ -2,6 +2,10 @@
 
 declare (strict_types=1);
 namespace Daw\Magic;
+<<<<<<< HEAD:src/magic/Carta.php
+=======
+    
+>>>>>>> e879eb093b7cbcab4a3c5cb7abd3f0734e343e10:src/magic/carta.php
 
     /**
     * @author Ismael Aliaga Molina <ismaelaliagamolina@gmail.com>

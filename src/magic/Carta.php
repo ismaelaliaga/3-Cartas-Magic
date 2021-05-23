@@ -1,6 +1,7 @@
 <?php
+
+declare (strict_types=1);
 namespace Daw\Magic;
-    require_once ("../../vendor/autoload.php");
 
     /**
     * @author Ismael Aliaga Molina <ismaelaliagamolina@gmail.com>

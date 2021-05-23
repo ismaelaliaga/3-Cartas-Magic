@@ -7,8 +7,7 @@ namespace Daw\Tests\Magic;
 use Daw\Magic\Carta;
 use PHPUnit\Framework\TestCase;
 
-
-class CartaPrueba extends TestCase{
+class CartaTest extends TestCase{
 
     /**
     * @covers ::comprobarnombre()

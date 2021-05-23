@@ -6,7 +6,7 @@ namespace Daw\Magic;
 function consultacartas(&$num_cartas){
 
     require_once ("conexionbd.php");
-    require_once ("carta.php");
+    require_once ("Carta.php");
     $unidadescarta =[];
 
     $consulta = $bd->prepare("SELECT * FROM vista_mostrar_cartas");
